@@ -1,0 +1,23 @@
+#server:
+#  port: 8761
+spring:
+  application:
+    name: user-provider
+  profiles:
+    include: eureka-cluster
+#  profiles:
+#    include: jdbc,redis,dubbo
+#  cloud:
+#    consul:
+#      host: localhost
+#      port: 8500
+#      discovery:
+#        health-check-path: /actuator/health
+#        service-name: user-provider
+#        enabled: true
+#      enabled: true
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:50001/eureka/,http://localhost:50002/eureka/,http://localhost:50003/eureka/

@@ -1,0 +1,42 @@
+---
+    #HA 版: 通过运行多个实例并请求他们相互注册, 通过defaultZone 注定本实例要注册到哪些其他的节点
+spring:
+  profiles: Peer1
+  application:
+    name: eureka-server
+server:
+  port: 50001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:50002/eureka/,http://localhost:50003/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+---
+spring:
+  profiles: Peer2
+  application:
+    name: eureka-server
+server:
+   port: 50002
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://localhost:50001/eureka/,http://localhost:50003/eureka/
+  instance:
+     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+---
+spring:
+  profiles: Peer3
+  application:
+    name: eureka-server
+server:
+  port: 50003
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:50001/eureka/,http://localhost:50002/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
