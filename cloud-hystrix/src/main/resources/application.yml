@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: cloud-hystrix
+server:
+  port: 55000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/
+
+feign:
+  hystrix:
+    enabled: true

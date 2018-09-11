@@ -18,8 +18,15 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/,http://eureka3:50003/eureka/
+      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/
+#      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/,http://eureka3:50003/eureka/
 
 feign:
   hystrix:
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+      base-path: /

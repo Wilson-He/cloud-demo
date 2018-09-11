@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 public class HelloFeignServiceImpl implements HelloFeignService{
     @Override
     public String helloService() {
-        System.err.println("hello consumer feign????????????");
-        return "hello consumer feign";
+        return "hystrix return";
     }
 }

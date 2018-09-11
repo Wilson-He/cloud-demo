@@ -20,7 +20,7 @@ public class HelloController {
     private HelloFeignService helloFeignService;
 
     @GetMapping("/hello")
-    public String index() {
+    public String hello() {
         return helloFeignService.helloService();
     }
 }
