@@ -16,6 +16,7 @@
         <module>cloud-hystrix</module>
         <module>cloud-config</module>
         <module>cloud-docs</module>
+        <module>cloud-eureka</module>
     </modules>
 
     <properties>

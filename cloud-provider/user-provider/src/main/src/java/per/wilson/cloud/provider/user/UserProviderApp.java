@@ -2,7 +2,6 @@ package per.wilson.cloud.provider.user;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -26,12 +25,12 @@ public class UserProviderApp {
         SpringApplication.run(UserProviderApp.class);
     }
 
-    @Value("${test.username}")
+//    @Value("${test.username}")
     String username;
 
     @GetMapping("/username")
     @ApiOperation("username")
     public String username(){
-        return username;
+        return "username";
     }
 }

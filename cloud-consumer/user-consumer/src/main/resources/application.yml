@@ -2,7 +2,7 @@ server:
   port: 52001
 spring:
   application:
-    name: user-consume
+    name: user-consumer
 #  profiles:
 #    include: jdbc,redis,dubbo
 #  cloud:

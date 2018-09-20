@@ -1,8 +1,6 @@
 package per.wilson.cloud.provider.user.config;
 
 import com.google.common.collect.Sets;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -18,6 +16,9 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * SwaggerConfig
  *
@@ -31,21 +32,20 @@ public class SwaggerConfig {
   @Bean
   public Docket userProviderDocket() {
     return new Docket(DocumentationType.SWAGGER_2)
-        .pathMapping("/")
-        .groupName("user-provider")
-        .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
-        .apiInfo(apiInfo())
-        .protocols(Sets.newHashSet("http", "https"))
-        .globalOperationParameters(globalParameters())
-        .select()
-        .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE + ".provider"))
-        .paths(PathSelectors.any())
-        .build();
+            .pathMapping("/")
+            .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
+            .apiInfo(apiInfo())
+            .protocols(Sets.newHashSet("http", "https"))
+            .globalOperationParameters(globalParameters())
+            .select()
+            .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE + ".provider"))
+            .paths(PathSelectors.any())
+            .build();
   }
 
   private ApiInfo apiInfo() {
-    return new ApiInfo("user-provider", "user-provider", "1.0.1", "Wilson", contact(),
-        "Wilson_license", "license-url", new ArrayList<>());
+    return new ApiInfo("user-consumer", "user-consumer", "1.0.1", "Wilson", contact(),
+            "Wilson_license", "license-url",new ArrayList<>());
   }
 
   private Contact contact() {
@@ -55,12 +55,12 @@ public class SwaggerConfig {
   private List<Parameter> globalParameters() {
     List<Parameter> list = new ArrayList<>();
     list.add(new ParameterBuilder()
-        .name("debug")
-        .modelRef(new ModelRef("string"))
-        .description("令牌").defaultValue("1")
-        .required(false)
-        .parameterType("header")
-        .build());
+            .name("debug")
+            .modelRef(new ModelRef("string"))
+            .description("令牌").defaultValue("1")
+            .required(false)
+            .parameterType("header")
+            .build());
     return list;
   }
 }

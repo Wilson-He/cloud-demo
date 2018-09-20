@@ -1,8 +1,6 @@
-package per.wilson.cloud.provider.user.config;
+package per.wilson.cloud.consumer.user.config;
 
 import com.google.common.collect.Sets;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -18,6 +16,9 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * SwaggerConfig
  *
@@ -31,7 +32,6 @@ public class SwaggerConfig {
     public Docket userProviderDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
             .pathMapping("/")
-            .groupName("user-consumer")
             .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
             .apiInfo(apiInfo())
             .protocols(Sets.newHashSet("http", "https"))

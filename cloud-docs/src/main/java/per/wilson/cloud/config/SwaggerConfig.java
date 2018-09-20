@@ -1,9 +1,8 @@
 package per.wilson.cloud.config;
 
-import java.util.ArrayList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -15,25 +14,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @date: 2018/9/20
  * @since:
  */
-@EnableSwagger2
 @Configuration
+@EnableSwagger2
 public class SwaggerConfig {
-  @Bean
-  public Docket userProviderDocket() {
-    return new Docket(DocumentationType.SWAGGER_2)
-        .apiInfo(apiInfo())
-        .select()
-        .paths(PathSelectors.any())
-        .build();
-  }
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo());
+    }
 
-  private ApiInfo apiInfo() {
-    return new ApiInfo("user-provider", "user-provider", "1.0.1", "Wilson", contact(),
-        "Wilson_license", "license-url", new ArrayList<>());
-  }
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder().title("分布式购物系统").description("购物系统接口文档说明")
+                .termsOfServiceUrl("http://localhost:8999")
+                .contact(new Contact("林塬", "", "765371578@qq.com"))
+                .version("1.0").build();
+    }
 
-  private Contact contact() {
-    return new Contact("Wilson", "Wilson.csdn", "845023508@qq.com");
-  }
 
 }
