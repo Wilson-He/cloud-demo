@@ -1,4 +1,4 @@
-package per.wilson.cloud.config;
+package per.wilson.cloud.provider.user.config;
 
 import com.google.common.collect.Sets;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
-import per.wilson.cloud.constant.GlobalConstant;
+import per.wilson.cloud.provider.user.constant.GlobalConstant;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -28,22 +28,23 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 public class SwaggerConfig {
     @Bean
-    public Docket docket() {
+    public Docket userProviderDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .pathMapping("/")
-                .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
-                .apiInfo(apiInfo())
-                .protocols(Sets.newHashSet("http", "https"))
-                .globalOperationParameters(globalParameters())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE))
-                .paths(PathSelectors.any())
-                .build();
+            .pathMapping("/")
+            .groupName("user-consumer")
+            .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
+            .apiInfo(apiInfo())
+            .protocols(Sets.newHashSet("http", "https"))
+            .globalOperationParameters(globalParameters())
+            .select()
+            .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE + ".consumer"))
+            .paths(PathSelectors.any())
+            .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfo("user-consumer", "user-consumer", "1.0.1", "Wilson", contact(),
-                "Wilson_license", "license-url", new ArrayList<>());
+            "Wilson_license", "license-url", new ArrayList<>());
     }
 
     private Contact contact() {
@@ -53,12 +54,12 @@ public class SwaggerConfig {
     private List<Parameter> globalParameters() {
         List<Parameter> list = new ArrayList<>();
         list.add(new ParameterBuilder()
-                .name("debug")
-                .modelRef(new ModelRef("string"))
-                .description("令牌").defaultValue("1")
-                .required(false)
-                .parameterType("header")
-                .build());
+            .name("debug")
+            .modelRef(new ModelRef("string"))
+            .description("令牌").defaultValue("1")
+            .required(false)
+            .parameterType("header")
+            .build());
         return list;
     }
 }

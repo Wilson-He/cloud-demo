@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * EurekaApplication
+ * per.wilson.cloud.EurekaApplication
  *
  * @author Wilson
  * @date 18-8-26

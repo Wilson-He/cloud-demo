@@ -1,4 +1,4 @@
-package per.wilson.cloud;
+package per.wilson.cloud.provider.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * UserConsumerApp
@@ -29,7 +29,7 @@ public class UserConsumerApp {
         SpringApplication.run(UserConsumerApp.class, args);
     }
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String home(){
         return "forward:/hystrix";
     }

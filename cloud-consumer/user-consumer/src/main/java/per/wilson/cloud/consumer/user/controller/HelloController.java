@@ -1,10 +1,10 @@
-package per.wilson.cloud.controller;
+package per.wilson.cloud.provider.user.controller;
 
 import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import per.wilson.cloud.service.HelloFeignService;
+import per.wilson.cloud.provider.user.service.HelloFeignService;
 
 /**
  * HelloController

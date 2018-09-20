@@ -15,6 +15,7 @@
         <module>cloud-common</module>
         <module>cloud-hystrix</module>
         <module>cloud-config</module>
+        <module>cloud-docs</module>
     </modules>
 
     <properties>

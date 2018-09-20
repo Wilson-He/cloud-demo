@@ -1,8 +1,8 @@
-package per.wilson.cloud.config;
+package per.wilson.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author: hewx
@@ -10,10 +10,10 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @since:
  */
 @SpringBootApplication
-@EnableConfigServer
-public class ConfigCenterApplication {
+@EnableDiscoveryClient
+public class DocsApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(ConfigCenterApplication.class);
+    SpringApplication.run(DocsApplication.class);
   }
 }
