@@ -1,0 +1,17 @@
+server:
+  port: 50000
+spring:
+  application:
+    name: config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Wilson-He/notes     # 配置git仓库的地址
+          search-paths: test                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: Wilson-He                                             # git仓库的账号
+          password:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka2:50001/eureka/,http://eureka2:50002/eureka/

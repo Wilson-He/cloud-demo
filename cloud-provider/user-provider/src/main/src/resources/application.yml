@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: user-provider
-  profiles:
-    include: eureka-cluster
 #  profiles:
 #    include: jdbc,redis,dubbo
 #  cloud:
@@ -17,8 +15,3 @@ spring:
 #        enabled: true
 #      enabled: true
 #
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/
-#      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/,http://eureka3:50003/eureka/

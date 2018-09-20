@@ -2,7 +2,7 @@ server:
   port: 52001
 spring:
   application:
-    name: user-consumer
+    name: user-consume
 #  profiles:
 #    include: jdbc,redis,dubbo
 #  cloud:
@@ -19,7 +19,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/
-#      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/,http://eureka3:50003/eureka/
 
 feign:
   hystrix:

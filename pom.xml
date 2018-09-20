@@ -13,8 +13,8 @@
         <module>cloud-consumer</module>
         <module>cloud-provider</module>
         <module>cloud-common</module>
-        <module>cloud-eureka</module>
         <module>cloud-hystrix</module>
+        <module>cloud-config</module>
     </modules>
 
     <properties>
@@ -33,7 +33,7 @@
         <logback.version>1.2.3</logback.version>
         <shiro.version>1.4.0</shiro.version>
         <redis.version>2.9.0</redis.version>
-        <cloud.version>2.0.0.RELEASE</cloud.version>
+        <cloud.version>2.0.1.RELEASE</cloud.version>
         <spring.data.redis.version>2.0.7.RELEASE</spring.data.redis.version>
     </properties>
 
@@ -64,17 +64,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-openfeign-core</artifactId>
             <version>${cloud.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-            <version>${cloud.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-web</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -118,11 +107,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>

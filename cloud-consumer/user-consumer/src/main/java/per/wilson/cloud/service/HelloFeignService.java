@@ -1,7 +1,7 @@
 package per.wilson.cloud.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * HelloFeignService
