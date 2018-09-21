@@ -4,7 +4,7 @@ import com.google.common.collect.Sets;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
-import per.wilson.cloud.provider.user.constant.GlobalConstant;
+import per.wilson.cloud.constant.GlobalConstant;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;

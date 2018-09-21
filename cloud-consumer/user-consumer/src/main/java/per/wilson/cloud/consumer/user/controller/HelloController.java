@@ -1,9 +1,10 @@
 package per.wilson.cloud.consumer.user.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import per.wilson.cloud.provider.user.service.HelloFeignService;
+import per.wilson.cloud.consumer.user.service.HelloFeignService;
 
 /**
  * HelloController
@@ -14,11 +15,11 @@ import per.wilson.cloud.provider.user.service.HelloFeignService;
 @RestController
 @RequestMapping("/")
 public class HelloController {
-//    @Resource
+    @Autowired
     private HelloFeignService helloFeignService;
 
     @GetMapping("/hello")
     public String hello() {
-        return "hello";
+        return helloFeignService.helloService();
     }
 }

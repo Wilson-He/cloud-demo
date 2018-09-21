@@ -1,4 +1,4 @@
-package per.wilson.cloud.provider.user.service;
+package per.wilson.cloud.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

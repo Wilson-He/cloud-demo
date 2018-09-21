@@ -1,4 +1,4 @@
-package per.wilson.cloud.provider.user.constant;
+package per.wilson.cloud.constant;
 
 /**
  * GlobalConstant
