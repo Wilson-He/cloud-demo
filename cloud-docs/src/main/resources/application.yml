@@ -6,6 +6,6 @@ spring:
 zuul:
   routes:
     user-provider:
-      path: /user-provider:/**
+      path: /user-provider/**
     user-consumer:
-      path: /user-consumer:/**
+      path: /user-consumer/**

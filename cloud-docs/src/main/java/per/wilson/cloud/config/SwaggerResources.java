@@ -20,8 +20,8 @@ public class SwaggerResources implements SwaggerResourcesProvider {
   @Override
   public List<SwaggerResource> get() {
     List<SwaggerResource> resources = new ArrayList<>();
-    resources.add(swaggerResource("user-provider", "/user-provider/v2/api-docs", "0.1"));
-    resources.add(swaggerResource("user-consumer", "/user-consumer/v2/api-docs", "0.1"));
+    resources.add(swaggerResource("用户提供者模块", "/user-provider/v2/api-docs", "latest"));
+    resources.add(swaggerResource("用户消费者模块", "/user-consumer/v2/api-docs", "latest"));
     return resources;
   }
 

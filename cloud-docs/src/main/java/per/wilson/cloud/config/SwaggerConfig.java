@@ -1,7 +1,9 @@
 package per.wilson.cloud.config;
 
+import com.google.common.collect.Sets;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -17,17 +19,24 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-    @Bean
-    public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo());
-    }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("分布式购物系统").description("购物系统接口文档说明")
-                .termsOfServiceUrl("http://localhost:8999")
-                .contact(new Contact("林塬", "", "765371578@qq.com"))
-                .version("1.0").build();
-    }
+  @Bean
+  public Docket docket() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .apiInfo(apiInfo())
+        .protocols(Sets.newHashSet("http", "https"))
+        .pathMapping("/")
+        .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE));
+  }
 
-
+  private ApiInfo apiInfo() {
+    return new ApiInfoBuilder()
+        .title("微服务模块文档")
+        .description("文档说明")
+        .termsOfServiceUrl("http://localhost:51001/")
+        .contact(new Contact("Wilson", "http://blog.csdn.net/z28126308", "845023508@qq.com"))
+        .license("Wilson_license")
+        .version("latest")
+        .build();
+  }
 }
