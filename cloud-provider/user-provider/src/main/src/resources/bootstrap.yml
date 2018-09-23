@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      name: test
+      discovery:
+        service-id: config-center
+        enabled: true
+      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/

@@ -1,5 +1,6 @@
 package per.wilson.cloud;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -7,8 +8,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * UserConsumerApp
@@ -22,11 +24,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @EnableHystrixDashboard
 @EnableCircuitBreaker
 @EnableTurbine
-@Controller
+@RestController
 public class UserConsumerApp {
     //http://localhost:52001/hystrix.stream
     public static void main(String[] args) {
         SpringApplication.run(UserConsumerApp.class, args);
+    }
+
+    @Value("${test.username}")
+    private String username;
+
+    @GetMapping("/username")
+    public String username(){
+        return username;
     }
 
     @RequestMapping("/")
