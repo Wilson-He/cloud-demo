@@ -1,6 +1,8 @@
-package per.wilson.cloud;
+package per.wilson.cloud.consumer.user;
 
 import org.springframework.beans.factory.annotation.Value;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -25,8 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableCircuitBreaker
 @EnableTurbine
 @RestController
+@Api
 public class UserConsumerApp {
-    //http://localhost:52001/hystrix.stream
     public static void main(String[] args) {
         SpringApplication.run(UserConsumerApp.class, args);
     }
@@ -40,7 +42,13 @@ public class UserConsumerApp {
     }
 
     @RequestMapping("/")
-    public String home(){
+    public String home() {
         return "forward:/hystrix";
+    }
+
+    @ApiOperation("index")
+    @GetMapping("/index")
+    public String index(){
+        return "index";
     }
 }

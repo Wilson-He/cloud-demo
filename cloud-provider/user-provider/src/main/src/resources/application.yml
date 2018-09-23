@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: user-provider
-  profiles:
-    include: eureka-cluster
 #  profiles:
 #    include: jdbc,redis,dubbo
 #  cloud:

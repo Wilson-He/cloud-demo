@@ -1,5 +1,7 @@
-package per.wilson.cloud;
+package per.wilson.cloud.provider.user;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 @RestController
 @RequestMapping("/")
+@Api
 public class UserProviderApp {
     public static void main(String[] args) {
         SpringApplication.run(UserProviderApp.class);
@@ -26,14 +29,15 @@ public class UserProviderApp {
     @Value("${test.username}")
     private String username;
 
-    @GetMapping("/username")
-    public String username(){
-        return username;
-    }
-
     @GetMapping("/hello")
-    public String hello(){
+    public String hello() {
         System.err.println("here is producer HelloController");
         return "hello producer";
+    }
+
+    @GetMapping("/username")
+    @ApiOperation("username")
+    public String username(){
+        return username;
     }
 }

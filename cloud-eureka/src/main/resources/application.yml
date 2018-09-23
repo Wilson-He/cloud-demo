@@ -1,22 +1,13 @@
 #HA 版: 通过运行多个实例并请求他们相互注册, 通过defaultZone 注定本实例要注册到哪些其他的节点
 ---
 spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/Wilson-He/notes     # 配置git仓库的地址
-          search-paths: test*                             # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username: Wilson-He                                             # git仓库的账号
-          password:
-  profiles: Peer1
   application:
     name: eureka-server
 server:
   port: 50001
 eureka:
   instance:
-      hostname: eureka1
+      hostname: eureka1     #host文件中ip名称
   client:
     service-url:
       defaultZone: http://eureka2:50002/eureka/
@@ -29,7 +20,7 @@ spring:
       server:
         git:
           uri: https://github.com/Wilson-He/notes     # 配置git仓库的地址
-          search-paths: /                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          search-paths: test                            # git仓库地址下的相对地址，可以配置多个，用,分割。
           username: Wilson-He                                             # git仓库的账号
           password:
   profiles: Peer2
@@ -47,15 +38,15 @@ eureka:
 
 ---
 spring:
+  profiles: Peer3
   cloud:
     config:
       server:
         git:
           uri: https://github.com/Wilson-He/notes     # 配置git仓库的地址
-          search-paths: /                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          search-paths: test                             # git仓库地址下的相对地址，可以配置多个，用,分割。
           username: Wilson-He                                             # git仓库的账号
           password:
-  profiles: Peer3
   application:
     name: eureka-server
 server:
@@ -66,3 +57,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/
+

@@ -1,4 +1,4 @@
-package per.wilson.cloud.service;
+package per.wilson.cloud.consumer.user.service;
 
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 18-8-26
  */
 @Component
-public class HelloFeignServiceImpl implements HelloFeignService{
+public class HelloFeignServiceImpl implements HelloFeignService {
     @Override
     public String helloService() {
         return "hystrix return";
