@@ -1,0 +1,11 @@
+server:
+  port: 8999
+spring:
+  application:
+    name: api-docs
+zuul:
+  routes:
+    user-provider:
+      path: /user-provider/**
+    user-consumer:
+      path: /user-consumer/**
