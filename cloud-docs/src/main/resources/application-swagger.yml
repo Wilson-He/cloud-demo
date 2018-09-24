@@ -1,0 +1,8 @@
+swagger:
+  resources:
+    module-name:
+      user-consumer: 用户消费者模块
+      user-provider: 用户提供者模块
+    module-docs-url:
+      user-consumer: /user-consumer/v2/api-docs
+      user-provider: /user-provider/v2/api-docs
