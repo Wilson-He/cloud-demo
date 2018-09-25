@@ -32,7 +32,7 @@ public class UserConsumerApp {
     }
 
 
-    @ApiOperation("index")
+    @ApiOperation("首页")
     @GetMapping("/index")
     public String index(){
         return "index";

@@ -33,12 +33,11 @@ public class SwaggerConfig {
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
             .pathMapping("/")
-            .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
             .apiInfo(apiInfo())
             .protocols(Sets.newHashSet("http", "https"))
             .globalOperationParameters(globalParameters())
             .select()
-            .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE + ".consumer"))
+            .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE))
             .paths(PathSelectors.any())
             .build();
     }

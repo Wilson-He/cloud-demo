@@ -1,6 +1,8 @@
 package per.wilson.cloud.provider.user.config;
 
 import com.google.common.collect.Sets;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -39,7 +41,7 @@ public class SwaggerConfig {
         .protocols(Sets.newHashSet("http", "https"))
         .globalOperationParameters(globalParameters())
         .select()
-        .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE + ".provider"))
+        .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE))
         .paths(PathSelectors.any())
         .build();
   }

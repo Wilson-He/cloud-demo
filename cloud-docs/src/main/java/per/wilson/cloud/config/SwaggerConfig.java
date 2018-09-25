@@ -25,8 +25,7 @@ public class SwaggerConfig {
     return new Docket(DocumentationType.SWAGGER_2)
         .apiInfo(apiInfo())
         .protocols(Sets.newHashSet("http", "https"))
-        .pathMapping("/")
-        .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE));
+        .pathMapping("/");
   }
 
   private ApiInfo apiInfo() {
