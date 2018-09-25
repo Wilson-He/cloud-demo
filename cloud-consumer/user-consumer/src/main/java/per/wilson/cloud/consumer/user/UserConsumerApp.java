@@ -1,5 +1,6 @@
 package per.wilson.cloud.consumer.user;
 
+import org.springframework.beans.factory.annotation.Value;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -31,6 +33,18 @@ public class UserConsumerApp {
         SpringApplication.run(UserConsumerApp.class, args);
     }
 
+    @Value("${test.username}")
+    private String username;
+
+    @GetMapping("/username")
+    public String username(){
+        return username;
+    }
+
+    @RequestMapping("/")
+    public String home() {
+        return "forward:/hystrix";
+    }
 
     @ApiOperation("首页")
     @GetMapping("/index")

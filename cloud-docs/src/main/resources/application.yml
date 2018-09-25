@@ -3,9 +3,16 @@ server:
 spring:
   application:
     name: api-docs
+  profiles:
+    include: swagger
 zuul:
   routes:
     user-provider:
       path: /user-provider/**
     user-consumer:
       path: /user-consumer/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/

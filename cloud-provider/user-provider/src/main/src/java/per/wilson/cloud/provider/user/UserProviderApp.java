@@ -27,7 +27,13 @@ public class UserProviderApp {
     }
 
     @Value("${test.username}")
-    String username;
+    private String username;
+
+    @GetMapping("/hello")
+    public String hello() {
+        System.err.println("here is producer HelloController");
+        return "hello producer";
+    }
 
     @GetMapping("/username")
     @ApiOperation("username")
