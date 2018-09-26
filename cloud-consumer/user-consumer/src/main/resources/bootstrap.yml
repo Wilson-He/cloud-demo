@@ -5,6 +5,7 @@ spring:
       discovery:
         service-id: config-center
         enabled: true
+      label: master
       profile: dev
 eureka:
   client:

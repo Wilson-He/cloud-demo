@@ -14,4 +14,7 @@ spring:
 #        service-name: user-provider
 #        enabled: true
 #      enabled: true
-#
+management:
+  endpoint:
+    auditevents:
+      enabled: false

@@ -6,6 +6,7 @@ spring:
         enabled: true               #必须有，声明配置服务器是可发现的
       name: test
       profile: dev
+      label: master
 eureka:
   client:
     service-url:
