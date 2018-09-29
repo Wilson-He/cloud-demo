@@ -1,0 +1,9 @@
+swagger:
+  title: 用户消费者
+  serviceUrl: url
+  descrpition: desc
+  license: Wilson
+  licenseUrl: Wilson-Url
+  contact-name: Wilson
+  contact-url: blog.csdn.net/z28126308
+  contact-email:

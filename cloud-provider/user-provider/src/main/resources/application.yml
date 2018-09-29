@@ -2,7 +2,9 @@ server:
   port: 51001
 spring:
   application:
+  profiles:
     name: user-provider
+    include: swagger
 #  profiles:
 #    include: jdbc,redis,dubbo
 #  cloud:

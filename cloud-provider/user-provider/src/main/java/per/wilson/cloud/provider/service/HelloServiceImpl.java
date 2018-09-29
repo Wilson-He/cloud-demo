@@ -1,4 +1,4 @@
-package per.wilson.cloud.provider.user.service;
+package per.wilson.cloud.provider.service;
 
 import org.springframework.stereotype.Service;
 import per.wilson.cloud.service.HelloService;
