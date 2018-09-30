@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import per.wilson.cloud.config.properties.SwaggerProperties;
-import per.wilson.cloud.constant.GlobalConstant;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -37,7 +36,7 @@ public class CommonSwaggerConfig {
 
   @Bean
   public Docket userProviderDocket() {
-    LOGGER.info("swagger init:" + swaggerProperties.toString());
+    LOGGER.info("init swagger:" + swaggerProperties.toString());
     return new Docket(DocumentationType.SWAGGER_2)
         .pathMapping("/")
         .host(swaggerProperties.getHost())

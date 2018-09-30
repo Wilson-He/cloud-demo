@@ -1,8 +1,6 @@
 package per.wilson.cloud.config.properties;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -15,11 +13,9 @@ import springfox.documentation.service.Contact;
  * @author Wilson
  * @date 2018/9/29
  */
-@Setter
-@Getter
 @Component
 @ConfigurationProperties("swagger")
-@ToString
+@Data
 public class SwaggerProperties {
     private String title;
     private String serviceUrl;
