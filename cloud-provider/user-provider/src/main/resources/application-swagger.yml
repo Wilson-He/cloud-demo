@@ -1,9 +1,14 @@
 swagger:
   title: 用户消费者
-  serviceUrl: url
   descrpition: desc
   license: Wilson
-  licenseUrl: Wilson-Url
+  licenseUrl: https://blog.csdn.net/z28126308
   contact-name: Wilson
-  contact-url: blog.csdn.net/z28126308
-  contact-email:
+  contact-url: https://blog.csdn.net/z28126308
+  contact-email: 845023508@qq.com
+  group-name: ${swagger.title}模块
+  host: http://localhost:${server.port}/
+  serviceUrl: ${swagger.host}swagger-ui.html/
+  base-package: per.wilson
+
+

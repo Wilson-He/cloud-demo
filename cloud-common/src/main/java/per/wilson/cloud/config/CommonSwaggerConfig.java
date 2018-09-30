@@ -1,6 +1,9 @@
 package per.wilson.cloud.config;
 
 import com.google.common.collect.Sets;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,21 +27,27 @@ import javax.annotation.Resource;
 @Configuration
 @EnableSwagger2
 @ComponentScan
+@Slf4j
 public class CommonSwaggerConfig {
-    @Resource
-    private SwaggerProperties swaggerProperties;
 
-    @Bean
-    public Docket userProviderDocket() {
-        System.err.println("swagger init:" + swaggerProperties.toString());
-        return new Docket(DocumentationType.SWAGGER_2)
-                .pathMapping("/")
-                .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
-                .apiInfo(swaggerProperties.apiInfo())
-                .protocols(Sets.newHashSet("http", "https"))
-                .select()
-                .apis(RequestHandlerSelectors.basePackage(GlobalConstant.BASE_PACKAGE))
-                .paths(PathSelectors.any())
-                .build();
-    }
+  private static final Logger LOGGER = LoggerFactory.getLogger(CommonSwaggerConfig.class);
+
+  @Resource
+  private SwaggerProperties swaggerProperties;
+
+  @Bean
+  public Docket userProviderDocket() {
+    LOGGER.info("swagger init:" + swaggerProperties.toString());
+    return new Docket(DocumentationType.SWAGGER_2)
+        .pathMapping("/")
+        .host(swaggerProperties.getHost())
+        .groupName(swaggerProperties.getGroupName())
+        .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
+        .apiInfo(swaggerProperties.apiInfo())
+        .protocols(Sets.newHashSet("http", "https"))
+        .select()
+        .apis(RequestHandlerSelectors.basePackage(swaggerProperties.getBasePackage()))
+        .paths(PathSelectors.any())
+        .build();
+  }
 }

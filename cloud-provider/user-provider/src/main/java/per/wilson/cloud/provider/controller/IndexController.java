@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/")
-@Api
+@Api(description = "菜单控制器")
 public class IndexController {
      /*   @Value("${test.username}")
     private String username;*/

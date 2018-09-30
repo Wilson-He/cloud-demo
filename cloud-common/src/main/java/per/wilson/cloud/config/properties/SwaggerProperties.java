@@ -23,19 +23,22 @@ import springfox.documentation.service.Contact;
 public class SwaggerProperties {
     private String title;
     private String serviceUrl;
-    private String descrpition;
+    private String description;
     private String license;
     private String licenseUrl;
     private String contactName;
     private String contactUrl;
     private String contactEmail;
+    private String host;
+    private String groupName;
+    private String basePackage;
 
 
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title(title)
                 .termsOfServiceUrl(serviceUrl)
-                .description(descrpition)
+                .description(description)
                 .licenseUrl(licenseUrl)
                 .license(license)
                 .contact(new Contact(contactName, contactUrl, contactEmail))
