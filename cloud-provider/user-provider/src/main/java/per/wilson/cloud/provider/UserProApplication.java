@@ -3,7 +3,7 @@ package per.wilson.cloud.provider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
-import per.wilson.cloud.config.CommonSwaggerConfig;
+import per.wilson.cloud.CommonBaseScan;
 
 /**
  * UserProApplication
@@ -12,7 +12,7 @@ import per.wilson.cloud.config.CommonSwaggerConfig;
  * @date 2018/9/29
  */
 @SpringBootApplication
-@Import(CommonSwaggerConfig.class)
+@Import(CommonBaseScan.class)
 public class UserProApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserProApplication.class);

@@ -4,7 +4,7 @@ spring:
   application:
   profiles:
     name: user-provider
-    include: swagger
+    include: swagger,mybatis,jdbc
 #  profiles:
 #    include: jdbc,redis,dubbo
 #  cloud:

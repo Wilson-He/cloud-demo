@@ -1,0 +1,37 @@
+jdbc:
+  druid:
+    enabled: true
+  url: jdbc:mysql://localhost:3306/wilson?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=true
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  username: root
+  password: tiger
+  filters: stat
+  min-idle: 11
+  time-between-eviction-runs-millis: 60000
+  min-evictable-idle-time-millis: 30000
+  test-while-idle: true
+  test-on-borrow: false
+  test-on-return: false
+  max-open-prepared-statements: 20
+  async-init: true
+  max-active: 22
+  pool-prepared-statements: true
+
+spring:
+  tx:
+    # 无需添加通配符* {@link org.springframework.transaction.TransactionDefinition}
+    # -Exception表示指定异常回滚,+Exception表示指定异常提交
+    # 已默认添加*: PROPAGATION_REQUIRED配置,所以无需配置*，Spring会优先匹配含前缀方法如insert*在，匹配不到才会使用*,与添加顺序无关
+    # 只会匹配添加了@Transactional的方法
+    attributes:
+      create: PROPAGATION_REQUIRED
+      delete: PROPAGATION_REQUIRED
+      remove: PROPAGATION_REQUIRED
+      update: PROPAGATION_REQUIRED
+      insert: PROPAGATION_REQUIRED,-RuntimeException
+      add: PROPAGATION_REQUIRED
+      select: PROPAGATION_NOT_SUPPORTED,ISOLATION_DEFAULT,readOnly
+      get: PROPAGATION_NOT_SUPPORTED,readOnly
+      list: PROPAGATION_NOT_SUPPORTED,readOnly
+      count: PROPAGATION_NOT_SUPPORTED,readOnly
+

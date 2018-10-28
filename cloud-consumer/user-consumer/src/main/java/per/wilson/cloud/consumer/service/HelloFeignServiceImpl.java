@@ -1,4 +1,4 @@
-package per.wilson.cloud.consumer.user.service;
+package per.wilson.cloud.consumer.service;
 
 import org.springframework.stereotype.Component;
 

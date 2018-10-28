@@ -1,4 +1,4 @@
-package per.wilson.cloud.consumer.user.controller;
+package per.wilson.cloud.consumer.controller;
 
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import per.wilson.cloud.consumer.user.User;
-import per.wilson.cloud.consumer.user.service.HelloFeignService;
+import per.wilson.cloud.consumer.User;
+import per.wilson.cloud.consumer.service.HelloFeignService;
 
 /**
  * HelloController

@@ -1,0 +1,14 @@
+mybatis:
+  model-package: per.wilson.cloud.model
+  dao-package: per.wilson.cloud.provider.dao
+  mappers-path: classpath*:mappers/*.xml
+  logic-delete: 1
+  login-not-delete: 0
+  # dialect:mariadb mysql oracle db2 h2 hsql sqlite sqlserver sqlserver2005 postgresql other
+  dialect: mysql
+  plus:
+    enabled: true
+#  sql-print-plugin: true   #default true
+#  optimistic-locker-plugin: false  #default false
+#  pagination-plugin: true  #default true
+#  page-helper-plugin: true #default true

@@ -1,4 +1,4 @@
-package per.wilson.cloud.consumer.user;
+package per.wilson.cloud.consumer;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotations.TableId;
