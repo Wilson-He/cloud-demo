@@ -2,6 +2,7 @@ package per.wilson.cloud.config;
 
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,7 @@ import java.util.Properties;
  */
 @Configuration
 @ComponentScan
+@ConditionalOnProperty(value = "mybatis.plus.enabled", havingValue = "true")
 public class CommonScannerConfig {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer(Properties ymlProperties) throws IOException {

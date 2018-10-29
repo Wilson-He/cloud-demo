@@ -6,8 +6,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import per.wilson.cloud.consumer.dto.GetUserBaseDTO;
 import per.wilson.cloud.consumer.dto.PageUserBaseDTO;
-import per.wilson.cloud.consumer.vo.AddUserBaseVO;
-import per.wilson.cloud.consumer.vo.UpdateUserBaseVO;
+import per.wilson.cloud.vo.AddUserBaseVO;
+import per.wilson.cloud.vo.UpdateUserBaseVO;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;

@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: user-consumer
+  profiles:
+    include: swagger
 #  profiles:
 #    include: jdbc,redis,dubbo
 #  cloud:

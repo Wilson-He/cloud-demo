@@ -7,8 +7,9 @@
 #      name: test
 #      profile: dev
 #      label: master
-#eureka:
-#  client:
-#    service-url:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:50001/eureka/
 #      defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/
 

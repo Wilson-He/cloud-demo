@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
-import per.wilson.cloud.config.properties.SwaggerPathProvider;
 import per.wilson.cloud.config.properties.SwaggerProperties;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -44,8 +43,6 @@ public class CommonSwaggerConfig {
         LOGGER.info("init swagger:" + swaggerProperties.toString());
         return new Docket(DocumentationType.SWAGGER_2)
                 .pathMapping("/")
-                .host(swaggerProperties.getHost())
-                .pathProvider(new SwaggerPathProvider(swaggerProperties.getContextPath()))
                 .groupName(swaggerProperties.getGroupName())
                 .apiInfo(swaggerProperties.apiInfo())
                 .protocols(Sets.newHashSet("http", "https"))

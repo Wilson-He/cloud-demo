@@ -1,0 +1,12 @@
+swagger:
+  enabled: true
+  title: 用户消费者
+  descrpition: desc
+  license: Wilson
+  licenseUrl: https://blog.csdn.net/z28126308
+  contact-name: Wilson
+  contact-url: https://blog.csdn.net/z28126308
+  contact-email: 845023508@qq.com
+  base-package: per.wilson
+
+

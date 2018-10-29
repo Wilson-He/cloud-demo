@@ -1,4 +1,4 @@
-package per.wilson.cloud.consumer.vo;
+package per.wilson.cloud.vo;
 
 import io.swagger.annotations.ApiModel;
 import lombok.Getter;
