@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: api-docs
-  profiles:
-    include: swagger
 zuul:
   routes:
     user-provider:
@@ -16,3 +14,14 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1:50001/eureka/,http://eureka2:50002/eureka/
+  instance:
+    hostname:
+
+swagger:
+  resources-provider:
+    swagger-resources:
+      - name: 用户消费者模块
+        url: /user-consumer/v2/api-docs
+      - name: 用户提供者模块
+        url: /user-provider/v2/api-docs
+  enabled: true
