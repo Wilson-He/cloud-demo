@@ -5,3 +5,5 @@ todo:
 Service Function
 Service Insert id
 无参consumer
+
+spring-cloud-starter-bus-amqp使consumer zipkin失效
